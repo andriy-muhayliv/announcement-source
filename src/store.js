@@ -7,7 +7,7 @@ const reducer = (state = defaultState, action) => {
       const deleteCardNewState = state.filter((item) => item.id !== action.id);
       return deleteCardNewState;
     case "EDIT_CARD":
-      const editCardnewSate = state.map((item) => {
+      const editCardNewSate = state.map((item) => {
         if (item.id === action.id) {
           item.title = action.title;
           item.description = action.description;
@@ -15,7 +15,7 @@ const reducer = (state = defaultState, action) => {
         return item;
       });
 
-      return editCardnewSate;
+      return editCardNewSate;
     case "ADD_CARD":
       const addCardNewState = state.slice();
       const newCard = {
