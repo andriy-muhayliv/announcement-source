@@ -54,9 +54,10 @@ const defaultState = [
 const reducer = (state = defaultState, action) => {
   switch (action.type) {
     case "DELETE_CARD":
-      return state.filter((item) => item.id !== action.id);
+      const deleteCardNewState = state.filter((item) => item.id !== action.id);
+      return deleteCardNewState;
     case "EDIT_CARD":
-      const newSate = state.map((item) => {
+      const editCardnewSate = state.map((item) => {
         if (item.id === action.id) {
           item.title = action.title;
           item.description = action.description;
@@ -64,18 +65,18 @@ const reducer = (state = defaultState, action) => {
         return item;
       });
 
-      return [...newSate];
+      return editCardnewSate;
     case "ADD_CARD":
-      const newCardState = state.slice();
+      const addCardNewState = state.slice();
       const newCard = {
         id: Date.now(),
         date: action.date,
         title: action.title,
         description: action.description,
       };
-      newCardState.unshift(newCard);
+      addCardNewState.unshift(newCard);
 
-      return [...newCardState];
+      return addCardNewState;
 
     default:
       return state;
