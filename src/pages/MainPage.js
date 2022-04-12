@@ -6,8 +6,8 @@ import CreateCardModal from "../components/create-card-moodal/CreateCardModal";
 import SimilarAnnouncementModal from "../components/similar-announcement-modal/SimilarAnnouncementModal";
 
 const MainPage = () => {
-  const [showModal, setShowModal] = useState(false);
   const data = useSelector((state) => state);
+  const [showModal, setShowModal] = useState(false);
   const [copyArr, setCopyArr] = useState();
   const [searchInput, setSearchInput] = useState("");
   const [similarAnnouncementModal, setSimilarAnnouncementModal] = useState({
